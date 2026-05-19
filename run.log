@@ -1,0 +1,31 @@
+2024-01-01 00:00:00  [INFO]  ========== Job started ==========
+2024-01-01 00:00:00  [INFO]  Config loaded â€” seed=42, window=5, version=v1
+2024-01-01 00:00:00  [INFO]  Random seed set to 42
+2024-01-01 00:00:00  [INFO]  Dataset loaded â€” 10000 rows, columns: ['timestamp', 'open', 'high', 'low', 'close', 'volume_btc', 'volume_usd']
+2024-01-01 00:00:00  [INFO]  Rolling mean computed (window=5) â€” 4 warm-up rows excluded from signal
+2024-01-01 00:00:00  [INFO]  Signal generated â€” 9996 rows with valid signal, signal_rate=0.499000 (4991 rows where close > rolling mean)
+2024-01-01 00:00:00  [INFO]  Metrics written to metrics.json
+2024-01-01 00:00:00  [INFO]  Metrics summary â€” rows_processed=9996, signal_rate=0.499, latency_ms=134
+2024-01-01 00:00:00  [INFO]  ========== Job finished: SUCCESS ==========2026-05-19 13:18:03  [INFO]  ========== Job started ==========
+2026-05-19 13:18:03  [INFO]  Config loaded — seed=42, window=5, version=v1
+2026-05-19 13:18:03  [INFO]  Random seed set to 42
+2026-05-19 13:18:03  [ERROR]  Job failed: Required column 'close' not found. Columns present: ['timestamp,open,high,low,close,volume_btc,volume_usd']
+Traceback (most recent call last):
+  File "C:\Projects\MLOps-style batch job\run.py", line 159, in main
+    df = load_dataset(args.input, logger)
+  File "C:\Projects\MLOps-style batch job\run.py", line 82, in load_dataset
+    raise ValueError(
+        f"Required column 'close' not found. Columns present: {list(df.columns)}"
+    )
+ValueError: Required column 'close' not found. Columns present: ['timestamp,open,high,low,close,volume_btc,volume_usd']
+2026-05-19 13:18:03  [INFO]  ========== Job finished: ERROR ==========
+2026-05-19 13:18:03  [INFO]  Metrics written to metrics.json
+2026-05-19 13:23:04  [INFO]  ========== Job started ==========
+2026-05-19 13:23:04  [INFO]  Config loaded — seed=42, window=5, version=v1
+2026-05-19 13:23:04  [INFO]  Random seed set to 42
+2026-05-19 13:23:04  [INFO]  Dataset loaded — 10000 rows, columns: ['timestamp', 'open', 'high', 'low', 'close', 'volume_btc', 'volume_usd']
+2026-05-19 13:23:04  [INFO]  Rolling mean computed (window=5) — 4 warm-up rows excluded from signal
+2026-05-19 13:23:04  [INFO]  Signal generated — 9996 rows with valid signal, signal_rate=0.499100 (4989 rows where close > rolling mean)
+2026-05-19 13:23:04  [INFO]  Metrics written to metrics.json
+2026-05-19 13:23:04  [INFO]  Metrics summary — rows_processed=9996, signal_rate=0.4991, latency_ms=24
+2026-05-19 13:23:04  [INFO]  ========== Job finished: SUCCESS ==========

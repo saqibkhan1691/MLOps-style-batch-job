@@ -1,0 +1,4 @@
+# pipeline configuration — change window or version here, not inside run.py
+seed: 42        # keeps signal output identical across every run
+window: 5       # number of candles for the rolling mean
+version: "v1"   # bump this when you ship a meaningful change
